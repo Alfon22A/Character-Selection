@@ -1,2 +1,8 @@
 -r requirements-dev.in
 jupyter
+matplotlib
+seaborn
+glob2
+skimage
+scikit-learn
+

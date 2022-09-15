@@ -2,6 +2,9 @@ import streamlit as st
 import numpy as np
 from keras.models import load_model
 import tensorflow as tf
+import sys
+sys.path.insert(1, '../Src/Lib')
+from functions import image_augmentation
 
 def main ():
 	
@@ -15,6 +18,7 @@ def main ():
 	st.write("Disclaimer: this shows how the computer perceives you, the only one who can indentify yourself is you.")
 	model_age = load_model('../Models/Age_NN3.hdf5')
 	model_gender = load_model('../Models/Gender_NN3.hdf5')
+	data_augmentation = load_model("../Models/Augmentation.hdf5")
 						   
 	img1 = st.file_uploader("Upload a pic!")
 	if img1:
@@ -23,9 +27,9 @@ def main ():
 		img1 = tf.image.resize(img1, [64,64])
 		img1 = img1 / 255
 		
-		age1 = round(model_age.predict((np.array([img1])))[0][0],2)
-		female1 = round(model_gender.predict((np.array([img1])))[0][0],2)
-		male1 = round(model_gender.predict((np.array([img1])))[0][1],2)
+		age1 = round(model_age.predict(np.array([img1]))[0][0],2)
+		female1 = round(model_gender.predict(np.array([img1]))[0][0],2)
+		male1 = round(model_gender.predict(np.array([img1]))[0][1],2)
 		
 		st.write("Age: {:}".format(int(round(age1,0))))
 		
