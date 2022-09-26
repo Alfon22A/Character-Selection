@@ -1,4 +1,4 @@
-# Age/Gender Classification
+# Age/Gender Detector
 
 ## Introduction
 
