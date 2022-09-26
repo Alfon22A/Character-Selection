@@ -10,7 +10,7 @@ It contains one Neural Network for each target, age predicted with a regression 
 
 [Adience Benchmark Gender And Age Classification](https://www.kaggle.com/datasets/ttungl/adience-benchmark-gender-and-age-classification?resource=download)
 
-Data Source cointained Age as a group, for example: 25-30 years old, to train the model for regression it was determined that the mean value of the group was used as age.
+Data Source contained Age as a group, for example: 25-30 years old, to train the model for regression it was determined that the mean value of the group was used as age.
 
 In order to be inclusive, it has been determined that if the model is unsure about the gender, a Non-binary category is provided.
 
